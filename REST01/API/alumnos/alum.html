@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inf de Alumnos</title>
+</head>
+<body>
+
+    <script>
+      // Crear llamado a AJAX
+      var xhr = new XMLHttpRequest();
+
+      // Abrir la conexion
+      xhr.open('POST', 'https://denisfzelaya504.000webhostapp.com/REST01/API/alumnos/alumno.php', true);
+
+      //Retorno de datos
+      xhr.onload = function(){
+        if(this.status === 200){
+          var respuesta = JSON.parse(xhr.responseText);
+
+          console.log(respuesta);
+        }
+      }
+      // Enviar la peticion
+      xhr.send();
+    
+    </script>
+    
+</body>
+</html>
